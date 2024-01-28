@@ -1,16 +1,29 @@
-const ItemListContainer = ({greeting1, greeting2}) => {
-    return (
-        <div className="container my-5">
-            <div className="row">
-                <div className="col text-center">
-                    <div className="alert alert-warning p-3" role="alert">
-                        <h1 className="display-3">{greeting1}</h1>
-                        <h3 className="display-6">{greeting2}</h3>
-                    </div>
-                </div>
-            </div>
-        </div>        
+import { useEffect, useState } from "react";
+import matrizProductos from "./json/productos.json";
+import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
+import Card from "./Card";
+import Item from "./Item";
 
+const ItemListContainer = () => {
+    const [articulos, setArticulos] = useState([]);
+    const {id} = useParams();
+
+    useEffect(() => {
+        const promesa = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(id ? matrizProductos.filter(detalle => detalle.categoria === id) : matrizProductos);                
+            }, 2000);
+        })        
+        promesa.then(dato => {
+            setArticulos(dato);
+        })
+    }, [id]);
+
+    return (
+        <>
+            <ItemList articulos={articulos}/> 
+        </>
     )
 }
 

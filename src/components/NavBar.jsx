@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import LogoBb from "./LogoBb"
 
@@ -9,15 +10,13 @@ const NavBar = () => {
                 <div className="col-md-5">
                     <LogoBb tamano={100} />
                 </div>
-
                 <div className="col-md-4">
                     <ul className="nav ms-auto mb-2 mb-lg-0">
-                        <li className="nav-item"><a className="nav-link" aria-current="page"href="#!">CABELLO</a></li>
-                        <li className="nav-item"><a className="nav-link" aria-current="page"href="#!">BARBA</a></li>
-                        <li className="nav-item"><a className="nav-link" aria-current="page"href="#!">AFEITADO</a></li>
-                        <li className="nav-item"><a className="nav-link" aria-current="page"href="#!">ROSTRO</a></li>
-                        <li className="nav-item"><a className="nav-link" aria-current="page"href="#!">ACCESORIOS</a></li>
-                        <li className="nav-item"><a className="nav-link" aria-current="page"href="#!">PAQUETES</a></li>
+                        <li className="nav-item"><NavLink className="nav-link" aria-current="page"to={"/"}>PRODUCTOS/SERVICIOS</NavLink></li>
+                        <li className="nav-item"><NavLink className="nav-link" aria-current="page"to={"/category/Cabello"}>CABELLO</NavLink></li>
+                        <li className="nav-item"><NavLink className="nav-link" aria-current="page"to={"/category/Barba"}>BARBA</NavLink></li>
+                        <li className="nav-item"><NavLink className="nav-link" aria-current="page"to={"/category/Accesorios"}>ACCESORIOS</NavLink></li>
+                        <li className="nav-item"><NavLink className="nav-link" aria-current="page"to={"/category/Paquetes"}>PAQUETES</NavLink></li>
                     </ul>
                 </div>
                 <div className="col-md-1 d-flex align-items-center justify-content">
@@ -25,9 +24,6 @@ const NavBar = () => {
                 </div>
             </div>
         </nav>
-
-
-
     )
 }
 

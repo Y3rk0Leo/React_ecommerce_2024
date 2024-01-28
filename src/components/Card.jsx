@@ -29,7 +29,7 @@ const Card = () => {
                 <div className="card h-100">
                     <img src={ SlideImg3} className="img-fluid" alt="..."/>
                     <div className="card-body">
-                        <h2 className="card-title">Accesorios</h2>
+                        <h2 className="card-title">Herramientas</h2>
                         <p className="card-text">Kit completo para el cuidado y mantenimiento de la barba y bigote.</p>
                     </div>
                     <div className="card-footer"><a className="btn btn-primary btn-sm" href="#!">Leer más...</a></div>
